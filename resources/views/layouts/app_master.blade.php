@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light" data-menu-styles="dark" data-toggled="close">
+
+    <head>
+
+        <!-- Meta Data -->
+        @include('layouts.partials.meta')
+    
+        <!-- Main Theme Js -->
+        <script src="{{asset('build/assets/main.js')}}"></script>
+
+        <!-- ICONS CSS -->
+        <link href="{{asset('build/assets/icon-fonts/icons.css')}}" rel="stylesheet">
+
+        <!-- Bootstrap 
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+        -->
+        <link href="{{ asset('build/assets/libs/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+        @include('layouts.components.styles')
+      
+        <!-- APP CSS & APP SCSS -->
+        @vite(['resources/sass/app.scss'])
+
+        @yield('styles')
+        <style>
+            .event {
+                background-color: #add8e6 !important; /* Svetlo modra */
+                border-color: #87ceeb !important; /* Nebeško modra */
+            }
+
+            .event-parent {
+                background-color: #87ceeb !important; /* Še svetlejša modra */
+                border-color: #4682b4 !important; /* Jekleno modra */
+            }
+
+        </style>
+
+
+
+    </head>
+
+    <body class="">
+        @php
+            $blade_user = Auth::user(); 
+            $blade_active_status = $blade_user->active_status;
+            $blade_person = $blade_active_status->person;
+        @endphp
+        <!-- Switcher -->
+        @include('layouts.components.switcher')
+        <!-- End switcher -->
+
+        <!-- Loader -->
+        <div id="loader" >
+            <img src="{{asset('build/assets/images/media/loader.svg')}}" alt="">
+        </div>
+        <!-- Loader -->
+
+        <div class="page">
+
+            <!-- Main-Header -->
+            @include('layouts.components.app_header')
+            <!-- End Main-Header -->
+
+            <!--Main-Sidebar-->
+            @include('layouts.components.app_sidebar')
+            <!-- End Main-Sidebar-->
+
+            <!-- Start::app-content -->
+            <div class="main-content app-content">
+                <div class="container-fluid">
+
+                    @yield('content')
+                    
+                </div>
+            </div>
+            <!-- End::content  -->
+
+            <!-- Footer opened -->
+            @include('layouts.components.footer')
+            <!-- End Footer -->
+
+            <!-- Country-selector modal -->
+            @include('layouts.components.modal')
+            <!-- End Country-selector modal -->
+
+            @yield('modals')  
+
+        </div>
+
+        <!-- SCRIPTS -->
+        @include('layouts.components.scripts')
+
+        <!-- Sticky JS -->
+        <script src="{{asset('build/assets/sticky.js')}}"></script>
+
+        <!-- Custom-Switcher JS -->
+        @vite('resources/assets/js/custom-switcher.js')
+
+        <!-- APP JS-->
+		@vite('resources/js/app.js')       
+        <!-- END SCRIPTS -->
+
+    </body> 
+
+</html>

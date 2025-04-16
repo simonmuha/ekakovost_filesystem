@@ -1,0 +1,90 @@
+body {
+    font-family: DejaVu Sans, sans-serif;
+    background-image: url('/storage/app/eKakovost - A4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 297mm; /* A4 height */
+    width: 210mm;  /* A4 width */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Vključi širino in višino elementov v celotno širino in višino */
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+.container {
+    position: absolute;
+    top: 0; /* Odvisno od tega, koliko prostora želite pustiti od vrha */
+    left: 0; /* Odvisno od tega, koliko prostora želite pustiti od levega roba */
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    position: absolute;
+    top: 12cm; /* Pozicija od vrha strani */
+    left: 3cm; /* Pozicija od levega roba */
+    width: 15cm; /* Ali nastavite širino po potrebi */
+    height: auto; /* Ali nastavite višino po potrebi */
+}
+
+address {
+    position: absolute;
+    top: 4cm; /* Pozicija od vrha strani */
+    left: 3cm; /* Pozicija od levega roba */
+    width: 10 cm; /* Ali nastavite širino po potrebi */
+    height: auto; /* Ali nastavite višino po potrebi */
+}
+
+.line {
+    position: absolute;
+    top: 9.9cm; /* Od vrha strani */
+    left: 1cm; /* Od levega roba */
+    width: 2cm; /* Dolžina črte */
+    height: 0.03cm; /* Debelina črte, prilagodite po potrebi (tanjša črta) */
+    background-color: black; /* Barva črte */
+}
+
+
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+}
+
+header, .footer {
+    text-align: center;
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+.header img {
+    max-height: 100px;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #000;
+    padding-top: 10px;
+}
+.page-break {
+    page-break-after: always;
+}

@@ -1,0 +1,79 @@
+body {
+    background-color: #eeeeca !important;   
+}
+
+.admin-card {
+    color: black;
+    background-color: #eeeeca; /* Ali katerakoli druga svetla barva */
+    border: 1px solid #800020; /* Zelen okvir */
+    border-radius: 0.5rem; /* Zaobljeni robovi */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Senca */
+    overflow: hidden; /* Poskrbi, da zaobljeni robovi delujejo pravilno */
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-card-header {
+    background-color: #006eff; /* Prilagojena barva */
+    padding: 1rem; /* Razmik znotraj glave kartice */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Dodano za poravnavo levo in desno */
+    color: black; /* Barva besedila */
+}
+
+.admin-card-header .card-icon {
+    margin-right: 0.5rem; /* Razmik med ikono in naslovom */
+}
+
+.admin-card-header .card-title {
+    font-size: 1.5rem; /* Velikost naslova */
+    font-weight: bold; /* Debelina naslova */
+    margin: 0; /* Odstrani privzeti razmik naslova */
+    color: Black; /* Barva besedila */
+}
+
+
+
+
+.admin-card-body {
+    padding: 1rem; /* Razmik znotraj telesa kartice */
+    font-size: 1rem; /* Velikost besedila */
+    flex: 1 1 auto;
+}
+
+.admin-card-footer {
+    padding: 0.5rem 1rem; /* Razmik znotraj noge kartice */
+    background-color: #f7f7f7; /* Ozadje noge kartice */
+    border-top: 1px solid #800020; /* Vrstica na vrhu noge kartice */
+    text-align: right; /* Poravnava besedila v desno */
+}
+
+.admin-card-footer small a {
+    color: #006eff; /* Barva povezave */
+    text-decoration: none; /* Odstrani podčrtavanje povezave */
+}
+
+.admin-card-footer small a:hover {
+    text-decoration: underline; /* Podčrtaj povezavo ob prehodu z miško */
+}
+
+.card-columns {
+    column-count: 3; /* Število stolpcev */
+    column-gap: 1rem; /* Razmik med stolpci */
+}
+
+@media (max-width: 768px) {
+    .card-columns {
+        column-count: 1; /* Število stolpcev na manjših zaslonih */
+    }
+}
+
+.dropdown-item.profil {
+    background-color: #eeeeca !important; /* Bele barve ozadja */
+}
+
+/* Stil za aktivne elemente */
+.dropdown-item.profil.active {
+    background-color: #ffff00; /* Rumena barva ozadja */
+}

@@ -1,0 +1,289 @@
+:root {
+    --main-bg-color: #d0e9fc;
+    --main-color: #3F79C3;
+    --main-text-color: #9FBCE1;
+    
+    --navbar-bg-color: #3F79C3;
+    --navbar-bg-light-color: #2f5f9e;
+    --navbar-text-color: #9FBCE1;
+    
+}
+
+body {
+    background-color: var(--main-bg-color) !important;
+}
+
+.userschool_quality-icon { 
+    color: #49e6e6; /* Modra barva */
+}
+.userschool_quality-link {
+    color: #006eff; /* Modra barva besedila */
+}
+.userschool_quality-text {
+    color: #092323; /* Modra barva besedila */
+}
+
+
+
+.userschool_quality-text a {
+    color: var(--main-text-color); /* Barva besedila */
+    text-decoration: none; /* Odstrani podčrtavanje */
+}
+
+.userschool_quality-text a:hover { 
+    color: #cccccc; /* Prilagodite barvo za hover efekt, če želite */
+    text-decoration: underline; /* Dodajte podčrtavanje pri hoverju, če želite */
+}
+/* ------------------- userschool_quality - Card --------------------------*/
+.userschool_quality-icon {
+    color: #9FBCE1; /* Določite barvo ikone */
+}
+
+.userschool_quality-icon:hover {
+    color: #007bff; /* Barva ikone ob premiku miške */
+}
+
+/* ------------------- userschool_quality - Card --------------------------*/
+.userschool_quality-card {
+    background-color: var(--main-bg-color) !important; /* Ali katerakoli druga svetla barva */
+    border: 0px solid #3F79C3 !important; /* Zelen okvir */
+    border-radius: 1rem !important; /* Zaobljeni robovi */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Senca */
+    overflow: hidden; /* Poskrbi, da zaobljeni robovi delujejo pravilno */
+}
+.userschool_quality-card-header {
+    background-color: var(--navbar-bg-color) !important; /* Prilagojena barva */
+    color: var(--main-text-color);
+    border-top-left-radius: 1rem !important; /* Zaobljeni robovi */
+    border-top-right-radius: 1rem !important; /* Zaobljeni robovi */
+    padding: 1rem; /* Dodano nekaj notranjega odmika */
+}
+.userschool_quality-card-header h4 a {
+    color:  var(--main-text-color) !important; /* Spremeni barvo besedila na belo */
+    text-decoration: none;
+}
+.userschool_quality-card-header h4 a:hover {
+    color:  var(--main-text-color) !important; /* Spremeni barvo besedila na belo */
+    text-decoration: underline;
+
+}
+.userschool_quality-card-header h5 a {
+    color:  var(--main-text-color) !important; /* Spremeni barvo besedila na belo */
+    text-decoration: none;
+}
+.userschool_quality-card-header h5 a:hover {
+    color:  var(--main-text-color) !important; /* Spremeni barvo besedila na belo */
+    text-decoration: underline;
+
+}
+/* Sprememba barve pri hover efektu (ko uporabnik miško premakne nad povezavo) */
+
+.card-header .row {
+    display: flex;
+    align-items: center; /* Vertikalna poravnava */
+}
+
+.card-header-success {
+    background-color: #28a745; /* Zelena barva */
+    color: white; /* Barva besedila */
+}
+
+/* Poskrbite, da bodo elementi v d-flex pravilno poravnani */
+.d-flex.align-items-center {
+    width: 100%; /* Zavzame celotno širino */
+}
+
+.bd-highlight {
+    display: flex;
+    align-items: center; /* Vertikalna poravnava vsebine */
+    justify-content: center; /* Opcionalno: horizontalna poravnava */
+}
+/* Splošna pravila v card Body */
+.card-body a {
+    color: var(--main-color); /* Nastavi želeno barvo povezave */
+    text-decoration: none; /* Odstrani podčrtavanje, če želite */
+}
+.card {
+  flex: 1; /* Zavzame enako količino prostora */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex-grow: 1; /* Zasede preostali prostor v kartici */
+}
+
+.card-footer {
+  margin-top: auto; /* Postavi footer na dno kartice */
+}
+
+.card-disabled {
+  background-color: #f0f0f0; /* Siva barva za neaktivne kartice */
+  color: #6c757d; /* Siva barva besedila za neaktivne kartice */
+  pointer-events: none; /* Onemogoči klike na sivi kartici */
+  opacity: 0.6; /* Zmanjšana vidljivost */
+}
+
+/* Sprememba barve pri hover efektu */
+.card-body a:hover {
+    color: var(--main-color); /* Nova barva ob hover efektu */
+    text-decoration: underline; /* Dodaj podčrtavanje ob hover efektu, če želite */
+}
+
+.card-body .row {
+    display: flex;
+    justify-content: center; /* Poravna vsebino znotraj vrstice na sredino */
+    align-items: center; /* Vertikalna poravnava */
+}
+
+
+
+.card-disabled .userschool_quality-link {
+    color: #a0a0a0; /* Siva barva povezave */
+}
+
+.card-disabled .userschool_quality-link:hover {
+    color: #808080; /* Temnejša siva za hover efekt */
+}
+
+/* Poravnava besedila znotraj kolone na sredino */
+
+
+/* ------------------- Images --------------------------*/
+/*          v skupnem css                               */
+
+/* ------------------- Navbar --------------------------*/
+
+.navbar-dark.bg-dark {
+    background-color: var(--navbar-bg-color) !important;
+}
+
+.date-box {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-align: center;
+    display: inline-block;
+}
+
+
+
+.navbar-icon-top .navbar-nav .nav-link > .fa {
+    position: relative;
+    width: 36px;
+    font-size: 24px;
+  }
+  .navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+    font-size: 0.75rem;
+    position: absolute;
+    right: 0;
+    font-family: sans-serif;
+  }
+  .navbar-icon-top .navbar-nav .nav-link > .fa {
+    top: 3px;
+    line-height: 12px;
+  }
+  .navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+    top: -10px;
+  }
+  @media (min-width: 576px) {
+    .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link {
+      text-align: center;
+      display: table-cell;
+      height: 70px;
+      vertical-align: middle;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link > .fa {
+      display: block;
+      width: 48px;
+      margin: 2px auto 4px auto;
+      top: 0;
+      line-height: 24px;
+    }
+    .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link > .fa > .badge {
+      top: -7px;
+    }
+  }
+  @media (min-width: 768px) {
+    .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link {
+      text-align: center;
+      display: table-cell;
+      height: 70px;
+      vertical-align: middle;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fa {
+      display: block;
+      width: 48px;
+      margin: 2px auto 4px auto;
+      top: 0;
+      line-height: 24px;
+    }
+    .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fa > .badge {
+      top: -7px;
+    }
+  }
+  @media (min-width: 992px) {
+    .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link {
+      text-align: center;
+      display: table-cell;
+      height: 70px;
+      vertical-align: middle;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fa {
+      display: block;
+      width: 48px;
+      margin: 2px auto 4px auto;
+      top: 0;
+      line-height: 24px;
+    }
+    .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fa > .badge {
+      top: -7px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link {
+      text-align: center;
+      display: table-cell;
+      height: 70px;
+      vertical-align: middle;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa {
+      display: block;
+      width: 48px;
+      margin: 2px auto 4px auto;
+      top: 0;
+      line-height: 24px;
+    }
+    .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa > .badge {
+      top: -7px;
+    }
+  }
+  body { 
+      padding-top: 65px; 
+  }
+  .navbar-brand {
+    height: 100%; /* Višina slike bo enaka višini navbarja */
+    max-height: 50px; /* Nastavi največjo višino za sliko */
+    border-radius: 1rem !important; /* Zaobljeni robovi */
+  }
+
+.nav-item:active,
+.active {
+    color: var(--main-text-color) !important;
+    background-color: var(--navbar-bg-light-color) !important; 
+    border-color: red !important;
+  }
+
+.navbar .nav-link,
+.navbar .nav-link .fa {
+    color: var(--navbar-text-color) !important;
+}

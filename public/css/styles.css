@@ -1,0 +1,68 @@
+
+
+/* public/css/styles.css */
+
+/* Images */
+.img-edit {
+    position: relative; /* Nastavi relativno pozicioniranje za starševski element */
+    display: inline-block; /* Za boljše upravljanje s pozicioniranjem */
+}
+
+.icon-on-picture {
+    position: absolute; /* Omogoči pozicioniranje ikone glede na starševski element */
+    top: 10px; /* Nastavi navpični položaj ikone, prilagodite po potrebi */
+    right: 10px; /* Nastavi vodoravni položaj ikone, prilagodite po potrebi */
+    color: white; /* Barva ikone */
+    background-color: rgba(0, 0, 0, 0.5); /* Polprosojno ozadje za boljšo vidljivost ikone */
+    padding: 3px; /* Zmanjšajte notranji odmik okrog ikone */
+    border-radius: 50%; /* Zaobljeni robovi za ikono */
+    font-size: 1.5rem !important; /* Zmanjšajte velikost ikone, dodan !important za preglasitev drugih nastavitev */
+    width: 24px; /* Nastavi širino ikone */
+    height: 24px; /* Nastavi višino ikone */
+    line-height: 24px; /* Poravna ikono vertikalno */
+}
+
+.rounded-image {
+    width: 100%; /* Zagotovite, da bo slika zavzela celotno širino starševskega elementa */
+    border-radius: 1rem; /* Zaobljeni robovi slike */
+}
+
+
+/* Za urediti */
+.changed-value {
+    background-color: white; /* Siva barva */
+}
+
+.changed {
+    background-color: lightblue; /* Siva barva za spremenjeno vnosno polje */
+}
+.status-button {
+    /* Skupni stil za gumb */
+    border: none;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.active {
+    /* Stil za aktivno stanje */
+    background-color: green;
+}
+
+.inactive {
+    /* Stil za neaktivno stanje */
+    background-color: red;
+}
+
+.activebutton {
+    background-color: green; /* Zelena barva za aktivne gumbe */
+    color: white; /* Bela barva besedila za boljše berljivosti */
+}
+
+.inactivebutton {
+    background-color: lightgrey; /* Svetlo siva barva za neaktivne gumbe */
+    color: black; /* Črna barva besedila za boljše berljivosti */
+}
+.rounded-circle {
+    border-radius: 50%; /* Nastavi sliko na okroglo obliko */
+}

@@ -1,0 +1,55 @@
+body {
+    background-color: #cececc !important;  
+}
+.material-icon {
+    color: #49e6e6; /* Modra barva */
+}
+.material-link {
+    color: #ff0000 !important; /* Nastavite barvo povezave, npr. rdeča */
+    text-decoration: none !important; /* Odstranite podčrtavanje */
+}
+.material-link:hover {
+    color: #00ff00; /* Nastavite barvo povezave ob hover, npr. zelena */
+}
+
+.material-text {
+    color: #FFFFE0; /* Modra barva besedila */
+}
+.material-card {
+    background-color: #FFFFE0; /* Ali katerakoli druga svetla barva */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Senca */
+    overflow: hidden; /* Poskrbi, da zaobljeni robovi delujejo pravilno */
+}
+.material-card-header {
+    background-color: #006eff; /* Prilagojena barva */
+    color: white;
+}
+.material-link {
+    color: #006eff; !important; /* Barva besedila povezave s !important */
+}
+
+.material-link .icon-menu {
+    color: red; /* Barva ikone */
+}
+
+
+
+/* Primer dodatnih pravil za card-header, če je potrebno */
+.card-header-success {
+    background-color: #28a745; /* Zelena barva */
+    color: white; /* Barva besedila */
+}
+
+.navbar-dark.bg-dark {
+    background-color: #540014 !important;
+}
+
+.btn-material {
+    background-color: #800020;
+    border-color: #800020;
+    color: #fff; /* Določite barvo teksta, da je bela */
+}
+.btn-material:hover {
+    background-color: #660017;
+    border-color: #660017;
+}

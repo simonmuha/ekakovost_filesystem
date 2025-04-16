@@ -1,0 +1,23 @@
+// Variables
+@use 'variables';
+
+// Bootstrap
+@use 'bootstrap/scss/bootstrap';
+
+// Xintra
+@use "../assets/scss/styles.scss";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Custom CSS for buttons
+.role-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+

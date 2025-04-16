@@ -1,0 +1,59 @@
+body {
+    background-color: #cececc !important;  
+}
+.schoolareas-icon {
+    color: #49e6e6; /* Modra barva */
+}
+.schoolareas-link {
+    color: #ff0000; /* Nastavite barvo povezave, npr. rdeča */
+    text-decoration: none; /* Odstranite podčrtavanje */
+}
+.schoolareas-link:hover {
+    color: #00ff00; /* Nastavite barvo povezave ob hover, npr. zelena */
+}
+.schoolareas-text {
+    color: #FFFFE0; /* Modra barva besedila */
+}
+.schoolareas-card {
+    background-color: #FFFFE0; /* Ali katerakoli druga svetla barva */
+    border: 2px solid #006eff; /* Zelen okvir */
+    border-radius: 1rem; /* Zaobljeni robovi */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Senca */
+    overflow: hidden; /* Poskrbi, da zaobljeni robovi delujejo pravilno */
+}
+.schoolareas-card-header {
+    background-color: #006eff; /* Prilagojena barva */
+    color: white;
+    border-top-left-radius: 1rem; /* Zaobljeni robovi */
+    border-top-right-radius: 1rem; /* Zaobljeni robovi */
+    padding: 1rem; /* Dodano nekaj notranjega odmika */
+}
+.schoolareas-link {
+    color: #006eff; !important; /* Barva besedila povezave s !important */
+}
+
+.schoolareas-link .icon-menu {
+    color: red; /* Barva ikone */
+}
+
+
+
+/* Primer dodatnih pravil za card-header, če je potrebno */
+.card-header-success {
+    background-color: #28a745; /* Zelena barva */
+    color: white; /* Barva besedila */
+}
+
+.navbar-dark.bg-dark {
+    background-color: #540014 !important;
+}
+
+.btn-schoolareas {
+    background-color: #800020;
+    border-color: #800020;
+    color: #fff; /* Določite barvo teksta, da je bela */
+}
+.btn-schoolareas:hover {
+    background-color: #660017;
+    border-color: #660017;
+}

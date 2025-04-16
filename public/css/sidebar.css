@@ -1,0 +1,41 @@
+/* public/css/sidebar.css */
+.sidebar {
+    width: 50px; /* Začetna širina sidebar-a */
+    transition: width 0.3s;
+    background-color: #343a40;
+    color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    overflow-y: auto;
+    overflow-x: hidden; /* Onemogoči horizontalni drsnik */
+}
+
+.sidebar:hover {
+    width: 200px; /* Fiksna širina, ko je sidebar odprt */
+}
+
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #fff;
+}
+
+.sidebar .nav-link .fa {
+    flex: 0 0 15%; /* Ikone zavzamejo 15% širine */
+    margin-right: 10px;
+    font-size: 20px;
+    text-align: center; /* Center aligned ikone */
+}
+
+.sidebar .menu-text {
+    flex: 1; /* Besedilo zavzame preostalo širino (85%) */
+    display: none;
+    white-space: nowrap; /* Prepreči prelom besedila */
+}
+
+.sidebar:hover .menu-text {
+    display: inline;
+}

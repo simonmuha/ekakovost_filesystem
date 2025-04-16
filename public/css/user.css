@@ -1,0 +1,97 @@
+:root {
+    --main-bg-color: #d0e9fc;
+    --main-color: #3F79C3;
+    --main-text-color: #9FBCE1;
+    
+    --navbar-bg-color: #3F79C3;
+    --navbar-bg-light-color: #2f5f9e;
+    --navbar-text-color: #9FBCE1;
+    
+}
+
+body {
+    background-color: var(--main-bg-color) !important;
+}
+
+
+/* ------------------- user - Card --------------------------*/
+.user-icon {
+    color: #9FBCE1; /* Določite barvo ikone */
+}
+
+.user-icon:hover {
+    color: #007bff; /* Barva ikone ob premiku miške */
+}
+
+/* ------------------- user - Card --------------------------*/
+.user-card {
+    background-color: var(--main-bg-color) !important; /* Ali katerakoli druga svetla barva */
+    border: 0px solid #3F79C3 !important; /* Zelen okvir */
+    border-radius: 1rem !important; /* Zaobljeni robovi */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Senca */
+    overflow: hidden; /* Poskrbi, da zaobljeni robovi delujejo pravilno */
+}
+.user-card-header {
+    background-color: var(--navbar-bg-color) !important; /* Prilagojena barva */
+    color: var(--main-text-color);
+    border-top-left-radius: 1rem !important; /* Zaobljeni robovi */
+    border-top-right-radius: 1rem !important; /* Zaobljeni robovi */
+    padding: 1rem; /* Dodano nekaj notranjega odmika */
+}
+.user-card-header h4 a {
+    color:  var(--main-text-color) !important; /* Spremeni barvo besedila na belo */
+    text-decoration: none;
+}
+.user-card-header h4 a:hover {
+    color:  var(--main-text-color) !important; /* Spremeni barvo besedila na belo */
+    text-decoration: underline;
+
+}
+.user-card-header h5 a {
+    color:  var(--main-text-color) !important; /* Spremeni barvo besedila na belo */
+    text-decoration: none;
+}
+.user-card-header h5 a:hover {
+    color:  var(--main-text-color) !important; /* Spremeni barvo besedila na belo */
+    text-decoration: underline;
+
+}
+/* Sprememba barve pri hover efektu (ko uporabnik miško premakne nad povezavo) */
+
+.card-header .row {
+    display: flex;
+    align-items: center; /* Vertikalna poravnava */
+}
+
+.card-header-success {
+    background-color: #28a745; /* Zelena barva */
+    color: white; /* Barva besedila */
+}
+
+/* Poskrbite, da bodo elementi v d-flex pravilno poravnani */
+.d-flex.align-items-center {
+    width: 100%; /* Zavzame celotno širino */
+}
+
+.bd-highlight {
+    display: flex;
+    align-items: center; /* Vertikalna poravnava vsebine */
+    justify-content: center; /* Opcionalno: horizontalna poravnava */
+}
+
+
+
+.user-card {
+    background-color: #FFFFE0; /* Ali katerakoli druga svetla barva */
+    border: 2px solid #006eff; /* Zelen okvir */
+    border-radius: 1rem; /* Zaobljeni robovi */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Senca */
+    overflow: hidden; /* Poskrbi, da zaobljeni robovi delujejo pravilno */
+}
+.user-card-header {
+    background-color: #006eff; /* Prilagojena barva */
+    color: black;
+    border-top-left-radius: 1rem; /* Zaobljeni robovi */
+    border-top-right-radius: 1rem; /* Zaobljeni robovi */
+    padding: 1rem; /* Dodano nekaj notranjega odmika */
+}

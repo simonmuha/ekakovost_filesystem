@@ -1,0 +1,31 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.17.9",
+        "@babel/preset-env": "^7.16.11",
+        "@babel/preset-react": "^7.13.13",
+        "@popperjs/core": "^2.10.2",
+        "@vitejs/plugin-react": "^4.3.3",
+        "axios": "^0.25",
+        "babel-loader": "^8.2.4",
+        "bootstrap": "^5.3.4",
+        "laravel-vite-plugin": "^1.1.1",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "resolve-url-loader": "^3.1.2",
+        "sass": "^1.32.11",
+        "sass-loader": "^11.0.1",
+        "vite": "^5.4.11",
+        "webpack": "^5.71.0"
+    },
+    "dependencies": {
+        "chart.js": "^4.4.0",
+        "flatpickr": "^4.6.13"
+    }
+}

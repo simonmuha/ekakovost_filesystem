@@ -1,0 +1,17 @@
+.school_admin-btn {
+    background-color: #4CAF50; /* Zelena barva ozadja */
+    border: none; /* Odstrani obrobo */
+    color: white; /* Bela barva besedila */
+    padding: 10px 24px; /* Notranji razmik */
+    text-align: center; /* Sredinska poravnava besedila */
+    text-decoration: none; /* Brez podčrtaja */
+    display: inline-block; /* Prikaz v vrsti */
+    font-size: 16px; /* Velikost pisave */
+    margin: 4px 2px; /* Zunanji razmik */
+    cursor: pointer; /* Kazalec miške */
+    border-radius: 12px; /* Zaobljeni robovi */
+}
+
+.school_admin-btn:hover {
+    background-color: #45a049; /* Temnejša zelena pri premiku miške */
+}
