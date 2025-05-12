@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StorageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\PersonsController;
@@ -75,6 +76,20 @@ use Illuminate\Support\Facades\Redirect;
 
 use App\Mail\TestEmail;
 use Illuminate\Support\Facades\Mail;
+
+
+use App\Http\Controllers\Storage\EntityController;
+use App\Http\Controllers\Storage\TagController;
+use App\Http\Controllers\Storage\SchoolYearController;
+use App\Http\Controllers\Storage\User_EntityController;
+
+
+use App\Models\Storage\Entity;
+use App\Models\Storage\Tag;
+use App\Models\Storage\SchoolYear;
+use App\Models\Storage\User;
+use App\Models\Storage\User_Entity;
+
 
 require base_path('routes/app.php');
 
@@ -622,3 +637,21 @@ Route::resource('persons', PersonsController::class);
 
 //notification
 Route::get('/send-notification', [NotificationController::class, 'sendOfferNotification']);
+
+
+//storage
+Route::prefix('/adminStorage')->/*middleware(['auth'])->*/group(function () {
+    Route::get('/dashboard', function () {
+        return view('storage.admin_dashboard', [
+            'entities' => Entity::all(),
+            'tags' => Tag::all(),
+            'years' => SchoolYear::all(),
+            'users' => User::all(),
+        ]);
+    })->name('storage.admin_dashboard');
+
+    Route::post('/entities', [EntityController::class, 'store'])->name('admin.entities.store');
+    Route::post('/tags', [TagController::class, 'store'])->name('admin.tags.store');
+    Route::post('/years', [SchoolYearController::class, 'store'])->name('admin.years.store');
+    Route::post('/user-entity', [User_EntityController::class, 'store'])->name('admin.user_entity.store');
+});
