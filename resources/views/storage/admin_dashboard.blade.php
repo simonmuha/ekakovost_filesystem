@@ -1,6 +1,6 @@
 
-{{-- @extends('layouts.app') --}}
-{{-- @section('content') --}}
+@extends('layouts.app')
+@section('content')
 <div class="container py-5 max-w-4xl mx-auto">
     <h1 class="text-2xl font-bold mb-6">Admin Dashboard</h1>
 
@@ -67,26 +67,5 @@
         </ul>
         @endif
     </div>
-
-    {{-- ŠOLSKA LETA --}}
-    <div class="mb-12 border rounded p-4">
-        <h2 class="text-xl font-semibold mb-2">Dodaj šolsko leto</h2>
-        <form method="POST" action="{{ route('admin.years.store') }}" class="mb-4">
-            @csrf
-            <input type="text" name="name" value="{{ old('name') }}" placeholder="Ime v obliki 2024/25" class="border p-2 w-full mb-2" required>
-            <input type="date" name="start" value="{{ old('start_date') }}" class="border p-2 w-full mb-2" required>
-            <input type="date" name="end" value="{{ old('end_date') }}" class="border p-2 w-full mb-2" required>
-            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Shrani leto</button>
-        </form>
-
-        @if($years->count())
-        <h3 class="text-md font-bold mb-2">Obstoječa šolska leta</h3>
-        <ul class="list-disc pl-5 text-sm text-gray-700">
-            @foreach($years as $year)
-                <li>{{ $year->name }}</li>
-            @endforeach
-        </ul>
-        @endif
-    </div>
 </div>
-{{-- @endsection --}}
+@endsection

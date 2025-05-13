@@ -16,10 +16,17 @@ use App\Models\App\AppUserActiveStatus;
 
 use App\Notifications\ResetPasswordNotification;
 
+use App\Models\Storage\Entity;
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     use HasRoles;
+    public function entities()
+    {
+        return $this->belongsToMany(Entity::class, 'user_entity');
+    }
+
     public $guard_name = 'web';
     /**
      * The attributes that are mass assignable.

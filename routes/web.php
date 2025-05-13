@@ -82,6 +82,7 @@ use App\Http\Controllers\Storage\EntityController;
 use App\Http\Controllers\Storage\TagController;
 use App\Http\Controllers\Storage\SchoolYearController;
 use App\Http\Controllers\Storage\User_EntityController;
+use App\Http\Controllers\Storage\FileController;
 
 
 use App\Models\Storage\Entity;
@@ -645,13 +646,23 @@ Route::prefix('/adminStorage')->/*middleware(['auth'])->*/group(function () {
         return view('storage.admin_dashboard', [
             'entities' => Entity::all(),
             'tags' => Tag::all(),
-            'years' => SchoolYear::all(),
             'users' => User::all(),
         ]);
     })->name('storage.admin_dashboard');
 
     Route::post('/entities', [EntityController::class, 'store'])->name('admin.entities.store');
     Route::post('/tags', [TagController::class, 'store'])->name('admin.tags.store');
-    Route::post('/years', [SchoolYearController::class, 'store'])->name('admin.years.store');
     Route::post('/user-entity', [User_EntityController::class, 'store'])->name('admin.user_entity.store');
 });
+
+// Obrazec za dodajanje datoteke
+Route::get('/file/create', [FileController::class, 'create'])->name('storage.create');
+
+// Shranjevanje datoteke
+Route::post('/file', [FileController::class, 'store'])->name('storage.store');
+
+// Seznam vseh datotek (če želiš)
+Route::get('/file', [FileController::class, 'index'])->name('storage.index');
+
+Route::get('/file/{file}/download', [FileController::class, 'download'])->name('storage.download');
+

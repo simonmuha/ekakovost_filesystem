@@ -22,7 +22,9 @@ return new class extends Migration
             $table->string('mime_type', 100);
             $table->unsignedBigInteger('size');
             $table->string('filetype');
-            $table->dateTime('date');
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
+            $table->string('access');
             $table->timestamps();
         });
     }
