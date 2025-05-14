@@ -1,8 +1,22 @@
-@extends('layouts.app')
+
+@extends('layouts.user_master')
+
+@section('styles')
+
+        <!-- Dropzone Css -->
+        <link rel="stylesheet" href="{{asset('build/assets/libs/dropzone/dropzone.css')}}">
+
+@endsection
 
 @section('content')
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Dodaj novo datoteko</h1>
+    <div class="d-flex justify-content-end mb-3">
+        <a href="{{ route('users.files.index') }}" class="btn btn-success">
+            Nazaj
+        </a>
+    </div>
+
+    <h1 class="text-center mb-4">Dodaj novo datoteko (OneDrive)</h1>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -15,13 +29,13 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('storage.store') }}" enctype="multipart/form-data" class="card shadow p-4">
+    <form method="POST" action="{{ route('storage.store') }}" class="card shadow p-4">
         @csrf
 
-        {{-- Datoteka --}}
+        {{-- Link do OneDrive datoteke --}}
         <div class="mb-3">
-            <label class="form-label">Datoteka</label>
-            <input type="file" name="file" class="form-control" required>
+            <label class="form-label">Povezava do datoteke (OneDrive)</label>
+            <input type="url" name="file_url" class="form-control" placeholder="https://onedrive.live.com/..." required>
         </div>
 
         {{-- Komentar --}}
@@ -39,41 +53,42 @@
                 @endforeach
             </select>
         </div>
+
         {{-- Datum začetka --}}
-<div class="mb-3">
-    <label for="valid_from" class="form-label">Velja od</label>
-    <input type="date" name="valid_from" id="valid_from" class="form-control" value="{{ old('valid_from', now()->toDateString()) }}">
-</div>
+        <div class="mb-3">
+            <label for="valid_from" class="form-label">Velja od</label>
+            <input type="date" name="start_date" id="valid_from" class="form-control" value="{{ old('start_date', now()->toDateString()) }}">
+        </div>
 
-{{-- Datum konca --}}
-<div class="mb-3">
-    <label for="valid_until" class="form-label">Velja do</label>
-    <input type="date" name="valid_until" id="valid_until" class="form-control">
-</div>
+        {{-- Datum konca --}}
+        <div class="mb-3">
+            <label for="valid_until" class="form-label">Velja do</label>
+            <input type="date" name="end_date" id="valid_until" class="form-control">
+        </div>
 
-<div class="mb-3">
-    <label class="form-label">Dostop</label>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="access" id="accessPrivate" value="private" checked>
-        <label class="form-check-label" for="accessPrivate">
-            Samo izbranim entitetam
-        </label>
-    </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="access" id="accessSchool" value="school">
-        <label class="form-check-label" for="accessSchool">
-            Samo za zaposlene na šoli
-        </label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="access" id="accessPublic" value="public">
-        <label class="form-check-label" for="accessPublic">
-            Javna datoteka (vidna vsem)
-        </label>
-    </div>
+        {{-- Dostop --}}
+        <div class="mb-3">
+            <label class="form-label">Dostop</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="access" id="accessPrivate" value="private" checked>
+                <label class="form-check-label" for="accessPrivate">
+                    Samo izbranim entitetam
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="access" id="accessSchool" value="school">
+                <label class="form-check-label" for="accessSchool">
+                    Samo za zaposlene na šoli
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="access" id="accessPublic" value="public">
+                <label class="form-check-label" for="accessPublic">
+                    Javna datoteka (vidna vsem)
+                </label>
+            </div>
+        </div>
 
-
-</div>
         {{-- Entitete --}}
         <div class="mb-3">
             <label class="form-label">Entitete za deljenje</label>
@@ -86,7 +101,7 @@
 
         {{-- Gumb --}}
         <div class="text-end">
-            <button type="submit" class="btn btn-primary">Naloži datoteko</button>
+            <button type="submit" class="btn btn-primary">Shrani povezavo</button>
         </div>
     </form>
 </div>

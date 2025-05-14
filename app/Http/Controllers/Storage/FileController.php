@@ -9,7 +9,7 @@ use \App\Models\Storage\File;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
-use Storage;
+use Illuminate\Support\Facades\Storage;
 
 
 class FileController extends Controller
@@ -17,6 +17,7 @@ class FileController extends Controller
 
 public function index(Request $request)
 {
+    $user = Auth::user();
     $user = auth()->user();
     $entityIds = $user->entities()->pluck('entities.id');
 
@@ -43,18 +44,28 @@ public function index(Request $request)
     }
 
     // 2. Filter po tagu
-    if ($request->filled('tag_id')) {
-        $query->whereHas('tags', fn($q) => $q->where('tags.id', $request->tag_id));
-    }
+if ($request->filled('tags')) {
+    $query->whereHas('tags', function ($q) use ($request) {
+        $q->whereIn('tags.id', $request->input('tags', []));
+    });
+}
 
-    // 3. Filter po entiteti
-    if ($request->filled('entity_id')) {
-        $query->whereHas('entities', fn($q) => $q->where('entities.id', $request->entity_id));
-    }
+// 3. Filter po entitetah
+if ($request->filled('entities')) {
+    $query->whereHas('entities', function ($q) use ($request) {
+        $q->whereIn('entities.id', $request->input('entities', []));
+    });
+}
 
     $files = $query->with(['tags', 'entities'])->latest()->get();
 
-    return view('storage.index', [
+    return view('users.files.index', [
+        'accessOptions' => [
+            'public' => 'Javna',
+            'school' => 'Šola',
+            'private' => 'Zasebna'
+            ],
+        'user' =>$user,
         'files' => $files,
         'tags' => Tag::all(),
         'entities' => Entity::all(),
@@ -63,34 +74,30 @@ public function index(Request $request)
 
 
 
-    public function create()
+public function create()
 {
     return view('storage.create', [
         'tags' => Tag::orderBy('name')->get(),
         'entities' => Entity::all(),
     ]);
 }
+
 public function store(Request $request)
 {
     $request->validate([
-        'file' => 'required|file|max:10240',
+        'file_url' => 'required|url',
         'comments' => 'nullable|string',
         'tags' => 'array',
         'entities' => 'array',
         'start_date' => 'required|date',
-        'end_date' => 'nullable|date|after_or_equal:valid_from',
+        'end_date' => 'nullable|date|after_or_equal:start_date',
+        'access' => 'required|in:public,school,private',
     ]);
-
-    $uploaded = $request->file('file');
-    $path = $uploaded->store('documents', 'public');
 
     $file = File::create([
         'user_id' => auth()->id(),
-        'name' => $uploaded->getClientOriginalName(),
-        'path' => $path,
-        'mime_type' => $uploaded->getMimeType(),
-        'size' => $uploaded->getSize(),
-        'filetype' => $uploaded->getClientOriginalExtension(), // tip datoteke
+        'name' => basename(parse_url($request->file_url, PHP_URL_PATH)), // iz linka vzame ime
+        'url' => $request->file_url, // shranimo samo URL
         'access' => $request->input('access'),
         'comments' => $request->input('comments'),
         'start_date' => $request->input('start_date'),
@@ -100,14 +107,22 @@ public function store(Request $request)
     $file->tags()->sync($request->input('tags', []));
     $file->entities()->sync($request->input('entities', []));
 
-    return redirect()->route('storage.create')->with('success', 'Datoteka uspešno dodana.');
+    return redirect()->route('storage.create')->with('success', 'Povezava uspešno shranjena.');
 }
 
 public function download(File $file)
 {
-    // autorizacija lahko dodaš tu
+    $user = auth()->user();
+
+    // Če nima dostopa, zavrni
+    if (
+        $file->access === 'private' &&
+        !$file->entities()->whereIn('entities.id', $user->entities()->pluck('entities.id'))->exists()
+    ) {
+        abort(403, 'Nimaš dostopa do te datoteke.');
+    }
+
     return Storage::disk('public')->download($file->path, $file->name);
 }
-
 
 }

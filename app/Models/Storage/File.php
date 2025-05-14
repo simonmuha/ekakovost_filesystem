@@ -6,18 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class File extends Model
 {
+    
     protected $fillable = [
     'user_id',
     'name',
-    'path',
-    'mime_type',
-    'size',
-    'filetype',
+    'url',
     'access',
     'comments',
     'start_date',
-    'end_date'
+    'end_date',
+];
 
+
+protected $casts = [
+    'start_date' => 'date',
+    'end_date' => 'date',
 ];
 
     public function tags()

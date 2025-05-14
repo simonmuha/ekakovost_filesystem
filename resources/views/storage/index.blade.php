@@ -2,6 +2,17 @@
 
 @section('content')
 <div class="container mt-5">
+        <div class="d-flex justify-content-end mb-3">
+    <a href="{{ route('homeAdmin.index') }}" class="btn btn-success">
+        Nazaj
+    </a>
+    </div>
+    <div class="d-flex justify-content-end mb-3">
+    <a href="{{ route('storage.create') }}" class="btn btn-success">
+        + Dodaj novo datoteko
+    </a>
+</div>
+
     <h1 class="mb-4 text-center">Seznam datotek</h1>
 
     {{-- Filter obrazec --}}

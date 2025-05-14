@@ -271,7 +271,7 @@ Route::get('/school_admin/school/add_person_to_school/{school_organization_id}',
 Route::resource('/school_admin/school', App\Http\Controllers\SchoolAdmin\SchoolOrganizationsController::class);
 
 //School Admin
-Route::get('/school_admin/home', [SchoolAdminController::class, 'home']);
+Route::get('/school_admin/home', [SchoolAdminController::class, 'home'])->name('homeAdmin.index');;
 Route::resource('/school_admin', SchoolAdminController::class);
 
 /*
@@ -384,7 +384,7 @@ Route::resource('/school/areas/levels', App\Http\Controllers\School\SchoolAreaLe
 // School - Areas
 Route::resource('/school/areas', App\Http\Controllers\School\SchoolAreasController::class);
 
-Route::get('/school/home', [SchoolsController::class, 'home']);
+Route::get('/school/home', [SchoolsController::class, 'home'])->name('home.index');
 Route::resource('/school', SchoolsController::class);
 
 /*
@@ -662,7 +662,12 @@ Route::get('/file/create', [FileController::class, 'create'])->name('storage.cre
 Route::post('/file', [FileController::class, 'store'])->name('storage.store');
 
 // Seznam vseh datotek (če želiš)
-Route::get('/file', [FileController::class, 'index'])->name('storage.index');
+Route::get('users/file', [FileController::class, 'index'])->name('users/files.index');
 
 Route::get('/file/{file}/download', [FileController::class, 'download'])->name('storage.download');
+
+Route::get('/users/files', [FileController::class, 'index']) ->name('users.files.index');
+
+Route::resource('entities', EntityController::class);
+
 
